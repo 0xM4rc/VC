@@ -124,7 +124,6 @@ Este código captura video en tiempo real utilizando la cámara web y realiza al
    - El bucle se detiene al presionar `ESC`, liberando la cámara y cerrando todas las ventanas abiertas.
 
 ### Apartado 5.2
-### Explicación del segundo código
 
 Esta versión del código realiza una tarea más compleja al analizar la imagen capturada en bloques de 8x8 píxeles para encontrar las zonas más claras y oscuras. A continuación, se explica su funcionamiento:
 
