@@ -49,7 +49,6 @@ Este script también genera un tablero de ajedrez en escala de grises, pero util
 
 ## Tarea 3
 
-#### Código actual:
 Este código genera el tablero de ajedrez de `8x8` utilizando la biblioteca `OpenCV` para dibujar los cuadros.
 1. **Inicialización:**
    - Define el tamaño del tablero como `8x8` y el tamaño de cada cuadro como `100x100` píxeles.
