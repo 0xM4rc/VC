@@ -22,31 +22,16 @@ En este apartado se propone un código el cual realiza el análisis de una image
 
 ### 2-TAREA: Aplica umbralizado a la imagen resultante de Sobel (convertida a 8 bits), y posteriormente realiza el conteo por filas y columnas similar al realizado en el ejemplo con la salida de Canny de píxeles no nulos. Calcula el valor máximo de la cuenta por filas y columnas, y determina las filas y columnas por encima del 0.95*máximo. Remarca con alguna primitiva gráfica dichas filas y columnas sobre la imagen. ¿Cómo se comparan los resultados obtenidos a partir de Sobel y Canny?
 
-A continuación, voy a comparar los resultados obtenidos en las imágenes, de acuerdo con el enunciado que menciona el análisis y comparación entre Sobel y Canny aplicados en los pasos de umbralizado, y el conteo de píxeles no nulos por filas y columnas.
+Sobel es un operador basado en gradientes que resalta las áreas de cambio de intensidad en una imagen, como los bordes. Utiliza filtros de convolución que calculan las derivadas en las direcciones horizontal y vertical, lo que permite detectar los cambios de brillo. Aunque es útil para identificar variaciones suaves en la intensidad, tiende a producir bordes menos precisos y más difusos.
+
+Canny, por otro lado, es un método más avanzado para la detección de bordes. Primero reduce el ruido en la imagen usando un filtro gaussiano, luego identifica los bordes detectando gradientes, y finalmente aplica un proceso de "non-maximum suppression" para eliminar detecciones no deseadas. Este enfoque lo hace más preciso, logrando contornos más nítidos y definidos.
 
 #### Sobel vs Canny:
 
-1. **Detección de Bordes**:
-   - **Canny** es un detector de bordes que aplica un algoritmo más complejo basado en gradientes y umbralización. Este detector puede ser más preciso en la identificación de bordes fuertes en una imagen, eliminando el ruido.
-   - **Sobel** es un operador basado en derivadas que resalta los cambios en la intensidad de la imagen en las direcciones X e Y. Genera una salida con menos procesamiento que Canny, lo que podría resultar en la detección de más ruido o bordes más suaves.
+La imagen procesada con Canny muestra bordes más nítidos y detallados, capturando mejor los contornos principales del objeto. Esto se refleja en la gráfica, donde se detecta un mayor porcentaje de píxeles por fila, alcanzando hasta el 40%. En cambio, Sobel produce bordes más suaves y difusos, con un menor porcentaje de detección, llegando al 30%. La diferencia clave entre ambos es que Canny resalta mejor los bordes definidos, mientras que Sobel es más adecuado para identificar gradientes suaves.
 
-2. **Umbralización de Sobel**:
-   - Las imágenes resultantes de Sobel, después de la conversión a 8 bits, se han umbralizado. Esto elimina valores bajos de la imagen, dejando solo los bordes más fuertes.
-   - Posteriormente, se cuenta el número de píxeles no nulos en las filas y columnas de la imagen Sobel umbralizada, lo que permite visualizar qué áreas contienen la mayor cantidad de bordes detectados.
-
-3. **Conteo de Píxeles No Nulos**:
-   - Tanto en Sobel como en Canny, se hace un análisis de los píxeles no nulos por filas y columnas. Para ambos métodos, se observa que hay una fuerte concentración de bordes en áreas clave de la imagen, pero Sobel, al ser más sensible a cambios suaves en intensidad, puede tener más ruido en las zonas de transición.
-   - En las gráficas, se resalta con líneas discontinuas rojas las filas y columnas donde el número de píxeles no nulos es mayor al 95% del valor máximo en cada dirección (filas y columnas).
-
-4. **Visualización**:
-   - En las gráficas para **Canny**, la curva muestra picos que representan las áreas con mayor concentración de bordes. Estos picos suelen ser más definidos, ya que Canny es más eficiente al eliminar ruido.
-   - Para **Sobel**, el comportamiento de la curva puede ser más variado y mostrar más fluctuaciones, lo que refleja su mayor sensibilidad a los gradientes suaves. Esto puede resultar en más filas y columnas destacadas con píxeles no nulos.
-
-#### Conclusiones:
-- **Canny** proporciona una mejor discriminación de los bordes principales y elimina el ruido de manera efectiva, mientras que **Sobel** puede capturar más detalles, incluyendo ruido o bordes menos definidos.
-- La comparación entre los resultados indica que Canny tiende a resaltar áreas más significativas de bordes, mientras que Sobel responde de manera más uniforme ante pequeños cambios en intensidad. En términos de filas y columnas destacadas, Sobel podría marcar más áreas, pero muchas de estas podrían corresponder a detalles menos relevantes que se consideran ruido.
-
-   
+![alt text](assets/tarea2-2.png)
+![alt text](assets/tarea2-1.png)
 
 ### 3- TAREA: Proponer un demostrador que capture las imágenes de la cámara, y les permita exhibir lo aprendido en estas dos prácticas ante quienes no cursen la asignatura :). Es por ello que además de poder mostrar la imagen original de la webcam, incluya al menos dos usos diferentes de aplicar las funciones de OpenCV trabajadas hasta ahora.
 
@@ -108,3 +93,46 @@ Este código crea una instalación interactiva inspirada en proyectos como "My l
    - El programa se ejecuta indefinidamente hasta que el usuario presiona la tecla 'q', momento en el cual se cierra la ventana y se libera el recurso de la cámara.
 
 ![alt text](assets/tarea4.png)
+
+### Error cometido en el apartado 2
+
+Durante la realización de la tarea, se cometió un error al aplicar el umbralizado directamente sobre la imagen en escala de grises, en lugar de hacerlo sobre el resultado del método Sobel, como se había planeado. Este paso incorrecto produjo una diferencia significativa en la interpretación de los bordes y la cantidad de píxeles blancos resultantes.
+
+El propósito del umbralizado es resaltar las áreas de interés, en este caso, los bordes detectados por Sobel. Sin embargo, al umbralizar la imagen en escala de grises, lo que se hizo fue resaltar los valores de intensidad de píxeles generales, lo que no corresponde a una representación precisa de los bordes. Este error llevó a que se destacaran diferencias de brillo en lugar de los cambios abruptos en los gradientes, que es lo que Sobel detecta.
+
+Como consecuencia de este proceso, el número de píxeles blancos que se obtuvieron fue mucho mayor en la imagen umbralizada de la escala de grises, ya que se incluyeron áreas que no correspondían a bordes, sino a variaciones de luminosidad en la imagen original. El gráfico muestra esto claramente: se observa una distribución más uniforme de píxeles blancos, con un pico mucho mayor en las áreas que no deberían tener bordes destacados. Esto distorsiona completamente el análisis esperado.
+
+![alt text](assets/extra_err_1.png)
+
+![alt text](assets/extra_err_2.png)
+
+![alt text](assets/extra_err_3.png)
+
+En contraste, al aplicar el umbralizado sobre la salida del operador Sobel, el número de píxeles blancos disminuye notablemente, ya que el umbral se aplicaría únicamente en las áreas donde se detectaron gradientes significativos (es decir, los bordes reales de la imagen). Esto permite una mejor diferenciación de las características importantes en la imagen y cumple el objetivo de identificar los contornos de manera precisa.
+
+El código corregido soluciona este problema al convertir la imagen resultante de Sobel en valores absolutos con `cv2.convertScaleAbs(sobel)`, lo que permite aplicar correctamente el umbral. Esto garantiza que los píxeles destacados en blanco correspondan exclusivamente a los bordes detectados por Sobel, eliminando las variaciones de intensidad que habían afectado el resultado anterior.
+
+
+```python
+###############
+# Umbralizado #
+###############
+
+#Define valor umbral
+valorUmbral = 130 #Prueba otros valores
+#Obtiene imagen umbralizada para dicho valor definido
+
+##########################################################################
+## Se pasa la escala de grises con la variable "gris"
+# res, imagenUmbralizada = cv2.threshold(gris, valorUmbral, 255, cv2.THRESH_BINARY)
+
+##########################################################################
+
+# Corrección
+res, imagenUmbralizada = cv2.threshold(cv2.convertScaleAbs(sobel), valorUmbral, 255, cv2.THRESH_BINARY)
+
+
+#Muestra resultado
+plt.imshow(imagenUmbralizada, cmap='gray')
+plt.show()
+```
