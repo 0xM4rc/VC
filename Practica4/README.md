@@ -152,6 +152,9 @@ for class_id, count in class_counts.items():
 
 ```
 
+[Video con seguimiento de detecciones](https://alumnosulpgc-my.sharepoint.com/:v:/g/personal/marcos_sanchez107_alu_ulpgc_es/EVhq9my9dLFKqEKIch-7t9MBZrCSxLKECSrmaz-4Oo8R8Q?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=BdNVPX)
+
+
 #### 1. Configuración Inicial
 
 - **Modelo YOLO**: Se carga un modelo YOLOv8 preentrenado para la detección de objetos, específico para identificar personas, coches, autobuses y camiones.
@@ -336,6 +339,10 @@ print(f"Conteo total de objetos: {object_counts}")
 print(f"Resultados guardados en {output_csv_path}")
 print("Proceso completado.")
 ```
+
+[Video detector de matriculas con OCR](https://alumnosulpgc-my.sharepoint.com/:v:/g/personal/marcos_sanchez107_alu_ulpgc_es/EZbT5Oh1umBClYU-vw__qsUBJgQapiDqtQwdxxuxhOJGjQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=2zi7Wv)
+
+[Video aportado por el profesor usando el detector ](https://alumnosulpgc-my.sharepoint.com/:v:/g/personal/marcos_sanchez107_alu_ulpgc_es/EYDZIi7AIbRPp2A-jcd7mtwBLapDZAggiOU-LN4-_aD48w?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=GFLmdc)
 
 #### 1. Configuración de Librerías y Modelos
 
