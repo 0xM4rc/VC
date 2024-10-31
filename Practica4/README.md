@@ -154,6 +154,7 @@ for class_id, count in class_counts.items():
 
 [Video con seguimiento de detecciones](https://alumnosulpgc-my.sharepoint.com/:v:/g/personal/marcos_sanchez107_alu_ulpgc_es/EVhq9my9dLFKqEKIch-7t9MBZrCSxLKECSrmaz-4Oo8R8Q?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=BdNVPX)
 
+![alt text](resources/tracked-object-detection.png)
 
 #### 1. Configuración Inicial
 
@@ -342,7 +343,11 @@ print("Proceso completado.")
 
 [Video detector de matriculas con OCR](https://alumnosulpgc-my.sharepoint.com/:v:/g/personal/marcos_sanchez107_alu_ulpgc_es/EZbT5Oh1umBClYU-vw__qsUBJgQapiDqtQwdxxuxhOJGjQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=2zi7Wv)
 
+![alt text](resources/plate-detection-vid2.png)
+
 [Video aportado por el profesor usando el detector ](https://alumnosulpgc-my.sharepoint.com/:v:/g/personal/marcos_sanchez107_alu_ulpgc_es/EYDZIi7AIbRPp2A-jcd7mtwBLapDZAggiOU-LN4-_aD48w?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=GFLmdc)
+
+![alt text](resources/plate-ocr-image.png)
 
 #### 1. Configuración de Librerías y Modelos
 
@@ -390,6 +395,4 @@ Cada detección, incluyendo tipo de objeto, coordenadas, matrícula detectada (s
 #### 7. Finalización
 
 Finalmente, se liberan los recursos de captura y escritura de video, y el código imprime un resumen con el conteo total de personas y coches detectados, junto con un mensaje indicando la finalización del proceso y la ubicación de los archivos generados.
-
-Este flujo permite analizar de manera detallada el contenido de un video, proporcionando tanto una visualización clara en el video de salida como una estructura de datos completa en el CSV para su posterior análisis o consulta.
 
