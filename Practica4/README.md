@@ -1,4 +1,4 @@
-#
+# Práctica 4: Reconocimiento de matrículas
 
 ## Marcos Miguel Sánchez Antonio
 
@@ -396,3 +396,13 @@ Cada detección, incluyendo tipo de objeto, coordenadas, matrícula detectada (s
 
 Finalmente, se liberan los recursos de captura y escritura de video, y el código imprime un resumen con el conteo total de personas y coches detectados, junto con un mensaje indicando la finalización del proceso y la ubicación de los archivos generados.
 
+
+### Referencias
+
+#### Videos
+[Traffic Flow In The Highway](https://www.pexels.com/video/traffic-flow-in-the-highway-2103099/)
+
+[Manhattan 5fh Avenue New York](https://www.pexels.com/video/manhattan-5fh-avenue-new-york-27080559/)
+
+#### Dataset
+[project-ttd5y]( https://universe.roboflow.com/project-n3wam/project-ttd5y/dataset/1)
